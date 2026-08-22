@@ -3,20 +3,19 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "HEIC Local";
-
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Free HEIC to JPG Converter — No Upload, No Signup, No Watermark" },
+      { title: "Free HEIC to JPG Converter — No Upload, No Signup, No Watermark | HEIC Local" },
       {
         name: "description",
         content:
-          "Convert HEIC photos to JPG or PNG instantly in your browser. Your files never leave your device. Free, unlimited, works on iPhone.",
+          "Convert HEIC photos to JPG or PNG free in your browser. Private (no upload), unlimited, works on iPhone. No watermark, no daily limit.",
       },
       { name: "theme-color", content: "#f3eee4" },
+      { name: "robots", content: "index, follow" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

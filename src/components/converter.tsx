@@ -10,7 +10,8 @@ import {
   X,
 } from "lucide-react";
 import JSZip from "jszip";
-import { AdSlot } from "@/components/ad-slot";
+import { AdUnit } from "@/components/ad-unit";
+import { SoftAgencyCta } from "@/components/soft-agency-cta";
 import {
   convertHeicFile,
   isLikelyHeic,
@@ -268,8 +269,6 @@ export function Converter() {
 
   return (
     <div className="space-y-6">
-      <AdSlot position="above-dropzone" />
-
       <section
         onDragOver={(e) => {
           e.preventDefault();
@@ -416,8 +415,6 @@ export function Converter() {
         </div>
       </section>
 
-      <AdSlot position="between-controls-and-results" />
-
       {hasResults && (
         <section className="rounded-[var(--radius-lg)] bg-surface p-5 shadow-[var(--shadow-card)] sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -466,10 +463,14 @@ export function Converter() {
                 </li>
               ))}
           </ul>
+
+          {/* after-success: ad + soft CTA — never on the same line as Download buttons */}
+          <div className="mt-6 space-y-3 border-t border-line pt-6">
+            <AdUnit slot="after-success" />
+            <SoftAgencyCta variant="after-success" />
+          </div>
         </section>
       )}
-
-      <AdSlot position="near-download" />
     </div>
   );
 }
