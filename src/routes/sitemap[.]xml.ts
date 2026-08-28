@@ -1,6 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const PATHS = ["/", "/privacy", "/terms", "/about"];
+const PATHS = [
+  "/",
+  "/how-to",
+  "/faq",
+  "/use-cases",
+  "/contact",
+  "/about",
+  "/privacy",
+  "/terms",
+];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -12,6 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 ${PATHS.map(
   (path) => `  <url>
     <loc>${origin}${path === "/" ? "" : path}</loc>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
   </url>`,
 ).join("\n")}

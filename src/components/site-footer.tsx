@@ -15,15 +15,27 @@ export function SiteFooter() {
 
       <AdUnit slot="footer" className="mt-10" />
 
-      <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Legal and about">
+      <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Site">
+        <Link to="/how-to" className="text-muted no-underline hover:text-ink">
+          How to
+        </Link>
+        <Link to="/faq" className="text-muted no-underline hover:text-ink">
+          FAQ
+        </Link>
+        <Link to="/use-cases" className="text-muted no-underline hover:text-ink">
+          Use cases
+        </Link>
+        <Link to="/about" className="text-muted no-underline hover:text-ink">
+          About
+        </Link>
+        <Link to="/contact" className="text-muted no-underline hover:text-ink">
+          Contact
+        </Link>
         <Link to="/privacy" className="text-muted no-underline hover:text-ink">
           Privacy
         </Link>
         <Link to="/terms" className="text-muted no-underline hover:text-ink">
           Terms
-        </Link>
-        <Link to="/about" className="text-muted no-underline hover:text-ink">
-          About
         </Link>
       </nav>
 
