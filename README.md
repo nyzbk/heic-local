@@ -1,44 +1,67 @@
 # HEIC Local
 
-Convert HEIC / HEIF photos to JPG or PNG **in the browser**. Files never leave the device. No signup, no watermark, no daily quota.
+**Convert HEIC / HEIF to JPG or PNG in the browser. The file never leaves the device.**
 
-**Live path (after Vercel):** deploy this repo → set env from `.env.example` → keep `VITE_ADSENSE_LIVE=false` until AdSense Site Ready.
+[Use it → https://heic-local.vercel.app](https://heic-local.vercel.app)
+
+No upload. No signup. No watermark. No daily quota. Batch + ZIP.
+
+## Why
+
+iPhone saves photos as HEIC. WhatsApp, Windows, most websites and email still want JPG.
+
+Most online converters upload the photo to a server. This one decodes it in your tab.
 
 ## Use
 
-1. Drop `.heic` / `.heif` photos, or tap **Choose photos**.
-2. Pick JPG or PNG (JPEG quality slider for JPG).
-3. Convert, then download one file or a ZIP.
+1. Open [heic-local.vercel.app](https://heic-local.vercel.app)
+2. Drop `.heic` / `.heif` files, or tap **Choose photos**
+3. Pick JPG or PNG
+4. Convert, then download one file or a ZIP
 
-Safari on iPhone often decodes HEIC natively. Other browsers fall back to a local WebAssembly decoder.
+Safari on iPhone often decodes HEIC natively. Other browsers use a local WebAssembly decoder.
 
-## Day 0 / AdSense readiness
+## What stays on the device
 
-- `public/ads.txt` — publisher `pub-7636435144500691`
-- `/privacy` `/terms` `/about` — required for review
-- Ad slots (framework 97): `mid` · `after-success` · `footer` — never covering Convert/Download
-- Soft agency CTA is **not** an ad
-- Env: see `.env.example` (`VITE_ADSENSE_LIVE=false` until Ready)
+| | |
+|---|---|
+| Upload to a server | No |
+| Account | No |
+| Watermark | No |
+| Daily limit | No |
+| Batch + ZIP | Yes |
+| License | MIT |
+
+Soft limits so the tab does not die: ~40 MB per photo, 50 files, 200 MB per batch.
 
 ## Run locally
 
 ```bash
+git clone https://github.com/nyzbk/heic-local.git
+cd heic-local
 npm install
-cp .env.example .env   # optional
 npm run dev
 ```
 
-Production build:
+Build:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Sign-in (Google / X) is optional and never required to convert.
+## How it works
 
-## Notes
+Client-side conversion with `heic-to` and native `createImageBitmap` when the browser can decode HEIC itself.
 
-- Conversion is 100% client-side (`heic-to` + native `createImageBitmap` when available).
-- Soft memory guards: ~40 MB per photo, 50 files, 200 MB per batch.
-- SEO: expanded FAQ (10), WebApplication + FAQPage schema, on-page primary keywords.
+## Other local tools
+
+- [Folio](https://folio-pdf-toolkit.vercel.app) — split / compress PDF in the browser
+- [Nota](https://folio-invoice.vercel.app) — invoice PDF
+- [Mark](https://qr-local.vercel.app) — QR codes
+- [Fit](https://fit-local-six.vercel.app) — resize / crop
+- [Crush](https://crush-local.vercel.app) — compress images
+
+## License
+
+MIT. See `LICENSE`.
