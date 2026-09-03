@@ -6,7 +6,7 @@ export function SiteHeader() {
   const { user } = useCurrentUserState();
 
   return (
-    <header className="flex items-center justify-between gap-4 py-5">
+    <header className="flex flex-wrap items-center justify-between gap-3 py-5">
       <Link to="/" className="flex min-h-11 items-center gap-2.5 no-underline">
         <span className="grid size-8 place-items-center rounded-md bg-accent text-bg" aria-hidden>
           <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -18,18 +18,30 @@ export function SiteHeader() {
         <span className="font-display text-lg font-semibold tracking-tight text-ink">HEIC Local</span>
       </Link>
 
-      <div className="flex min-h-11 items-center">
+      <nav className="flex min-h-11 flex-wrap items-center gap-x-4 gap-y-1 text-sm" aria-label="HEIC guides">
+        <Link to="/how-to" className="text-muted no-underline hover:text-ink">
+          How to
+        </Link>
+        <Link to="/windows" className="text-muted no-underline hover:text-ink">
+          Windows
+        </Link>
+        <Link to="/whatsapp" className="text-muted no-underline hover:text-ink">
+          WhatsApp
+        </Link>
+        <Link to="/faq" className="text-muted no-underline hover:text-ink">
+          FAQ
+        </Link>
         {user ? (
           <UserButton />
         ) : (
           <Link
             to="/login"
-            className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium text-muted no-underline hover:text-ink"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-muted no-underline hover:text-ink"
           >
             Sign in
           </Link>
         )}
-      </div>
+      </nav>
     </header>
   );
 }

@@ -19,6 +19,12 @@ export function SiteFooter() {
         <Link to="/how-to" className="text-muted no-underline hover:text-ink">
           How to
         </Link>
+        <Link to="/windows" className="text-muted no-underline hover:text-ink">
+          Windows
+        </Link>
+        <Link to="/whatsapp" className="text-muted no-underline hover:text-ink">
+          WhatsApp
+        </Link>
         <Link to="/faq" className="text-muted no-underline hover:text-ink">
           FAQ
         </Link>
