@@ -94,12 +94,19 @@ function HowToPage() {
         <h2 className="pt-4 font-display text-xl font-semibold text-ink">Windows and WhatsApp</h2>
         <p>
           On Windows 10/11 a HEIC file often shows a blank icon until you install Microsoft’s HEVC extension. Even then,
-          some chat apps still reject the container. Convert to JPG here, then attach the JPG. You do not need to install
-          a desktop codec pack to finish a one-off share.
+          some chat apps still reject the container. Convert to JPG here, then attach the JPG. Longer notes:{" "}
+          <Link to="/windows" className="text-accent underline-offset-2 hover:underline">
+            HEIC on Windows
+          </Link>
+          .
         </p>
         <p>
           WhatsApp on iPhone may recompress on send. If the receiver on desktop sees “unsupported,” send the JPG from
-          this tool instead of the original HEIC.
+          this tool instead of the original HEIC. Longer notes:{" "}
+          <Link to="/whatsapp" className="text-accent underline-offset-2 hover:underline">
+            HEIC in WhatsApp
+          </Link>
+          .
         </p>
 
         <h2 className="pt-4 font-display text-xl font-semibold text-ink">If conversion fails</h2>
