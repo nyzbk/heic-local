@@ -3,6 +3,7 @@ import { Converter } from "@/components/converter";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { AdUnit } from "@/components/ad-unit";
+import { HomeContent } from "@/components/home-content";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -14,9 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Convert HEIC to JPG or PNG free in your browser. Private (no upload), unlimited, works on iPhone Safari. Batch + ZIP. No watermark, no daily limit.",
+          "Convert iPhone HEIC photos to JPG or PNG in this browser tab. No upload, no signup, no watermark. Works on iPhone Safari and Windows. Batch + ZIP.",
       },
-      { name: "keywords", content: "heic to jpg, convert heic to jpg, heic converter free, heic to png, iphone heic converter, private heic converter" },
+      {
+        name: "keywords",
+        content:
+          "heic to jpg, convert heic to jpg, heic converter free, heic to png, iphone heic converter, private heic converter, heic windows, heic whatsapp",
+      },
       { property: "og:title", content: "Free HEIC to JPG Converter — No Upload | HEIC Local" },
       {
         property: "og:description",
@@ -34,6 +39,7 @@ export const Route = createFileRoute("/")({
             {
               "@type": "WebApplication",
               name: "HEIC Local",
+              url: "https://heic-local.vercel.app/",
               applicationCategory: "MultimediaApplication",
               operatingSystem: "Any",
               offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -119,27 +125,7 @@ function Home() {
           ))}
         </ol>
 
-        <section className="mt-14 space-y-3 text-sm leading-relaxed text-muted">
-          <h2 className="font-display text-2xl font-semibold tracking-tight text-ink">Why convert here</h2>
-          <p>
-            Soft limits are about 40 MB per photo, 50 files, 200 MB per batch — memory guards for phones, not a paid
-            quota. Safari often decodes HEIC natively; otherwise WASM runs on the device. Live Photo motion is not
-            exported; you get the still.
-          </p>
-          <p>
-            <Link to="/faq" className="text-accent underline-offset-2 hover:underline">
-              FAQ
-            </Link>
-            {" · "}
-            <Link to="/use-cases" className="text-accent underline-offset-2 hover:underline">
-              Use cases
-            </Link>
-            {" · "}
-            <Link to="/contact" className="text-accent underline-offset-2 hover:underline">
-              Contact
-            </Link>
-          </p>
-        </section>
+        <HomeContent />
       </main>
       <SiteFooter />
     </div>
