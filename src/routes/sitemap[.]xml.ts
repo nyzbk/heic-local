@@ -23,7 +23,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 ${PATHS.map(
   (path) => `  <url>
     <loc>${origin}${path === "/" ? "" : path}</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>`,
 ).join("\n")}
