@@ -95,18 +95,12 @@ function HowToPage() {
         <p>
           On Windows 10/11 a HEIC file often shows a blank icon until you install Microsoft’s HEVC extension. Even then,
           some chat apps still reject the container. Convert to JPG here, then attach the JPG. Longer notes:{" "}
-          <Link to="/windows" className="text-accent underline-offset-2 hover:underline">
-            HEIC on Windows
-          </Link>
-          .
+          <Link to="/windows" className="text-accent underline-offset-2 hover:underline">HEIC on Windows</Link>.
         </p>
         <p>
           WhatsApp on iPhone may recompress on send. If the receiver on desktop sees “unsupported,” send the JPG from
           this tool instead of the original HEIC. Longer notes:{" "}
-          <Link to="/whatsapp" className="text-accent underline-offset-2 hover:underline">
-            HEIC in WhatsApp
-          </Link>
-          .
+          <Link to="/whatsapp" className="text-accent underline-offset-2 hover:underline">HEIC in WhatsApp</Link>.
         </p>
 
         <h2 className="pt-4 font-display text-xl font-semibold text-ink">If conversion fails</h2>
@@ -130,16 +124,46 @@ function HowToPage() {
           not help a Windows colleague, and it does not help when you do not want the original in a third-party web
           form. Upload sites also keep a copy long enough to decode on their GPU. This page never takes that copy.
         </p>
+        <h2 className="pt-4 font-display text-xl font-semibold text-ink">
+          Native decode versus WASM in this tab
+        </h2>
+        <p>
+          The first successful decode on a given file usually goes through the browser’s own
+          createImageBitmap. Safari on current iOS often knows HEIC natively; the tab never needs a
+          second library for that still. When native decode throws — older Chrome on Windows,
+          Firefox, a HEIF flavour the OS skipped — the page loads heic-to and runs a WebAssembly
+          decoder in the same origin. Both paths write pixels to a canvas in this process. Neither
+          path POSTs the File to our server. If you watch the Network panel after the page and the
+          decoder chunk have loaded, conversion traffic should stay local. A spinner that lasts
+          minutes on a 12 MP still is memory and CPU, not an upload bar.
+        </p>
+        <p>
+          Concurrency is 1 on iPhone and Android so one 12 MP frame does not fight another for RAM.
+          A desktop may run 2. That is why a 40-file batch feels slower on a phone than on a laptop,
+          and why backgrounding Safari mid-batch is how people lose the decoder. Keep the tab
+          visible until the ZIP or the single JPEG appears in the share sheet. A renamed .mp4 is
+          not a still; the converter refuses it so a video does not sit in memory as a fake photo.
+          Burst or multi-image HEIF may need the key still exported from Photos first — that is a
+          Photos export, not a second trip to our origin.
+        </p>
+        <p>
+          JPEG quality 90 is a default for sharing, not a watermark and not a daily cap. PNG is the
+          lossless dump of the decoded frame when the next tool hates JPEG blocking. Neither encoder
+          writes a brand into the pixels. Closing the tab drops the bitmap. If you need the JPG
+          tomorrow, download it now — we do not keep a gallery.
+        </p>
+        <p>
+          First visit still needs the network: HTML, CSS, and the decoder chunk. After those land,
+          turning the radio off does not upload a photo, because there is nothing to upload. Reloading
+          a cold tab offline may lose the decoder script — that is the script, not custody of your
+          roll. Wide-gamut Display P3 shots can shift slightly when JPEG lands in sRGB. That is the
+          JPEG path, not a server filter, and not a reason to email the original.
+        </p>
         <p>
           More detail on real tasks:{" "}
-          <Link to="/use-cases" className="text-accent underline-offset-2 hover:underline">
-            use cases
-          </Link>
+          <Link to="/use-cases" className="text-accent underline-offset-2 hover:underline">use cases</Link>
           . Short answers:{" "}
-          <Link to="/faq" className="text-accent underline-offset-2 hover:underline">
-            FAQ
-          </Link>
-          .
+          <Link to="/faq" className="text-accent underline-offset-2 hover:underline">FAQ</Link>.
         </p>
       </main>
       <SiteFooter />
