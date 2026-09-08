@@ -22,7 +22,7 @@ function PrivacyPage() {
       <main className="pb-16 pt-4 prose-like">
         <p className="text-xs font-semibold tracking-wide text-accent uppercase">Legal</p>
         <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink">Privacy Policy</h1>
-        <p className="mt-2 text-sm text-muted">Last updated: 22 August 2026</p>
+        <p className="mt-2 text-sm text-muted">Last updated: 8 September 2026</p>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink">
           <h2 className="font-display text-lg font-semibold">Summary</h2>
@@ -90,6 +90,28 @@ function PrivacyPage() {
             For privacy questions related to this tool, contact via the agency site linked in the footer.
           </p>
 
+          <h2 className="font-display text-lg font-semibold pt-4">What the host actually sees</h2>
+          <p className="text-muted">
+            Hosting on HTTPS at heic-local.vercel.app is not custody of your camera roll and is not
+            an upload of the HEIC. Vercel may see that a browser requested the page, the script, and
+            the WASM chunk — ordinary static assets. Vercel does not receive the File object of a
+            photo beyond the moment your tab reads it, and it never receives the JPEG bytes you
+            download. There is no multipart “convert” form posted to our origin, no presigned
+            bucket, and no “processing queue” email.
+          </p>
+          <p className="text-muted">
+            Google ads, if they ever fill the mid / footer placeholders, receive the page URL and
+            ordinary ad signals. They do not receive the pixels. Until Site Ready those placeholders
+            stay empty. We do not run analytics that log filenames.
+          </p>
+          <h2 className="font-display text-lg font-semibold pt-4">Email is not an upload slot</h2>
+          <p className="text-muted">
+            If you email ultaultimatum@gmail.com, that message is ordinary email. That is why this
+            policy and the contact page both say: do not attach a photo. An attachment would be the
+            first time the operator could see a face. We do not want that inbox to become a drop
+            box. Closing the tab drops the in-memory bitmap. Downloads you saved to disk are yours
+            to delete. We cannot remotely wipe a file we never held.
+          </p>
           <h2 className="font-display text-lg font-semibold pt-4">Changes</h2>
           <p className="text-muted">We may update this page. The “Last updated” date will change when we do.</p>
         </section>
