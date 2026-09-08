@@ -59,6 +59,33 @@ export function HomeContent() {
         .
       </p>
 
+      <h2 className="pt-4 font-display text-2xl font-semibold tracking-tight text-ink">
+        What stays in this document
+      </h2>
+      <p>
+        The converter on this page is the product. The sentences under it exist so a reviewer and a
+        first-time visitor can tell HEIC Local from a dropzone that ships the roll to a queue. After
+        the HTML, CSS, and decoder have arrived, the File object you picked is read by this
+        document. Native decode uses the OS. The fallback uses WASM in this tab. JPEG quality 90 is
+        a default for sharing, not a watermark and not a daily cap. PNG is the lossless dump of the
+        decoded frame when the next tool hates JPEG blocking.
+      </p>
+      <p>
+        We do not keep a gallery after you leave. We do not pair this hostname with an account to
+        “sync conversions.” Optional Sign in in the header is a leftover scaffold and is not
+        required for Convert. If you never tap it, nothing about the still changes. That is
+        deliberate: a signup wall before a local decode is how thin converter sites fail both users
+        and AdSense reviewers. Guides on this host stay on delivery of a still —{" "}
+        <Link to="/iphone" className="text-accent underline-offset-2 hover:underline">iPhone Safari</Link>
+        , Windows, WhatsApp — not a second product.
+      </p>
+      <p>
+        Soft guards around 40 MB per photo, 50 files, and 200 MB per batch are RAM limits, not a
+        pricing tier. A 48 MP still on an old phone may fail the guard; use a laptop or export a
+        smaller frame from Photos. We do not raise the ceiling by email. Compressing a JPEG you
+        already have is a different hostname. This page only accepts a HEIC/HEIF still.
+      </p>
+
       <h2 className="pt-4 font-display text-2xl font-semibold tracking-tight text-ink">Limits you should know</h2>
       <ul className="list-disc space-y-2 pl-5">
         <li>Stills only. A video renamed to .heic will fail on purpose.</li>
@@ -69,21 +96,13 @@ export function HomeContent() {
       </ul>
 
       <p className="pt-2">
-        <Link to="/faq" className="text-accent underline-offset-2 hover:underline">
-          FAQ
-        </Link>
+        <Link to="/faq" className="text-accent underline-offset-2 hover:underline">FAQ</Link>
         {" · "}
-        <Link to="/use-cases" className="text-accent underline-offset-2 hover:underline">
-          Use cases
-        </Link>
+        <Link to="/use-cases" className="text-accent underline-offset-2 hover:underline">Use cases</Link>
         {" · "}
-        <Link to="/about" className="text-accent underline-offset-2 hover:underline">
-          About
-        </Link>
+        <Link to="/about" className="text-accent underline-offset-2 hover:underline">About</Link>
         {" · "}
-        <Link to="/contact" className="text-accent underline-offset-2 hover:underline">
-          Contact
-        </Link>
+        <Link to="/contact" className="text-accent underline-offset-2 hover:underline">Contact</Link>
       </p>
     </article>
   );

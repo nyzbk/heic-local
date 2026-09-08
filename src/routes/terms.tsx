@@ -21,7 +21,7 @@ function TermsPage() {
       <main className="pb-16 pt-4">
         <p className="text-xs font-semibold tracking-wide text-accent uppercase">Legal</p>
         <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink">Terms of Use</h1>
-        <p className="mt-2 text-sm text-muted">Last updated: 22 August 2026</p>
+        <p className="mt-2 text-sm text-muted">Last updated: 8 September 2026</p>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink">
           <h2 className="font-display text-lg font-semibold">Service</h2>
@@ -58,6 +58,20 @@ function TermsPage() {
             by us.
           </p>
 
+          <h2 className="font-display text-lg font-semibold pt-4">What this tool is not</h2>
+          <p className="text-muted">
+            HEIC Local is not a photography lab, not Apple, and not a substitute for the export your
+            workplace requires. If a JPEG looks wrong, you check the still before anyone prints it.
+            If you are not allowed to process a photo — someone else’s roll, a document you should
+            not have — do not pick it here.
+          </p>
+          <p className="text-muted">
+            We may show Google ads after Site Ready. Ads are not advice. Do not click them. Do not
+            ask other people to click them. Invalid traffic is an AdSense program-policy violation
+            and it burns the whole account, not one site. The dummy stills you convert to test a
+            layout are yours. Do not treat a test JPEG as evidence of a real delivery. Contact
+            without attachments: ultaultimatum@gmail.com.
+          </p>
           <h2 className="font-display text-lg font-semibold pt-4">Agency services</h2>
           <p className="text-muted">
             Links to brand-marketing agency services are optional offers. Free tool use does not create a client
