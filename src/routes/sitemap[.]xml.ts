@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+const SITE_ORIGIN = "https://heic-local.vercel.app";
+
 const PATHS = [
   "/",
   "/how-to",
   "/windows",
   "/whatsapp",
+  "/iphone",
   "/faq",
   "/use-cases",
   "/contact",
@@ -13,20 +16,31 @@ const PATHS = [
   "/terms",
 ];
 
+const LASTMOD: Record<string, string> = {
+  "/": "2026-09-08",
+  "/how-to": "2026-09-08",
+  "/iphone": "2026-09-08",
+  "/faq": "2026-09-08",
+  "/contact": "2026-09-08",
+  "/privacy": "2026-09-08",
+  "/terms": "2026-09-08",
+};
+
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async ({ request }: { request: Request }) => {
-        const origin = new URL(request.url).origin;
+      GET: async () => {
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${PATHS.map(
-  (path) => `  <url>
-    <loc>${origin}${path === "/" ? "" : path}</loc>
-    <lastmod>2026-09-05</lastmod>
+${PATHS.map((path) => {
+  const loc = path === "/" ? SITE_ORIGIN : `${SITE_ORIGIN}${path}`;
+  const lastmod = LASTMOD[path] ?? "2026-09-05";
+  return `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-  </url>`,
-).join("\n")}
+  </url>`;
+}).join("\n")}
 </urlset>
 `;
         return new Response(body, {

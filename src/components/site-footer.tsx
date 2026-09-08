@@ -25,6 +25,9 @@ export function SiteFooter() {
         <Link to="/whatsapp" className="text-muted no-underline hover:text-ink">
           WhatsApp
         </Link>
+        <Link to="/iphone" className="text-muted no-underline hover:text-ink">
+          iPhone
+        </Link>
         <Link to="/faq" className="text-muted no-underline hover:text-ink">
           FAQ
         </Link>
