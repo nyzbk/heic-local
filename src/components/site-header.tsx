@@ -31,6 +31,9 @@ export function SiteHeader() {
         <Link to="/iphone" className="text-muted no-underline hover:text-ink">
           iPhone
         </Link>
+        <Link to="/info" className="text-muted no-underline hover:text-ink">
+          Info
+        </Link>
         <Link to="/faq" className="text-muted no-underline hover:text-ink">
           FAQ
         </Link>

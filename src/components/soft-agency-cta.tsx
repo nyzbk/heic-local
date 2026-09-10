@@ -5,13 +5,27 @@ type Props = {
   variant?: "footer" | "after-success";
 };
 
+const HUB = "https://ultimatum-hub.vercel.app/";
+
+function hubUrl(): string {
+  const raw = String(import.meta.env.VITE_AGENCY_URL || "").trim();
+  if (!raw || raw === "#") return HUB;
+  return raw;
+}
+
+function hubLabel(): string {
+  const raw = String(import.meta.env.VITE_AGENCY_NAME || "").trim();
+  if (!raw || raw === "Agency") return "Ultimatum hub";
+  return raw;
+}
+
 /**
  * Soft agency CTA — NOT an ad. Keep separate from AdSense units.
- * Env: VITE_AGENCY_URL, VITE_AGENCY_NAME
+ * Default target is the Ultimatum hub. Env "#" is treated as empty.
  */
 export function SoftAgencyCta({ className, variant = "footer" }: Props) {
-  const url = (import.meta.env.VITE_AGENCY_URL as string) || "#";
-  const name = (import.meta.env.VITE_AGENCY_NAME as string) || "Agency";
+  const url = hubUrl();
+  const name = hubLabel();
 
   if (variant === "after-success") {
     return (
@@ -32,14 +46,14 @@ export function SoftAgencyCta({ className, variant = "footer" }: Props) {
 
   return (
     <p className={cn("max-w-xl text-sm leading-relaxed text-ink", className)}>
-      Built by {name} — we create $10k websites &amp; brand systems.{" "}
+      Built by {name} — we create $10k websites & brand systems.{" "}
       <a
         href={url}
         className="font-medium underline-offset-2 hover:underline"
         rel="noopener noreferrer"
         target="_blank"
       >
-        Portfolio
+        Ultimatum hub
       </a>
     </p>
   );
