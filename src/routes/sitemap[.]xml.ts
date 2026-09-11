@@ -15,6 +15,7 @@ const PATHS = [
   "/about",
   "/privacy",
   "/terms",
+  "/llms.txt",
 ];
 
 const LASTMOD: Record<string, string> = {
@@ -26,6 +27,7 @@ const LASTMOD: Record<string, string> = {
   "/contact": "2026-09-08",
   "/privacy": "2026-09-08",
   "/terms": "2026-09-08",
+  "/llms.txt": "2026-09-11",
 };
 
 export const Route = createFileRoute("/sitemap.xml")({

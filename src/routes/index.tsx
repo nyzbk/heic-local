@@ -28,7 +28,9 @@ export const Route = createFileRoute("/")({
         content: "Convert HEIC photos to JPG/PNG in the browser. Files never leave your device.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://heic-local.vercel.app/og.jpg" },
+      { name: "twitter:image", content: "https://heic-local.vercel.app/og.jpg" },
     ],
     scripts: [
       {
@@ -37,11 +39,24 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": "WebSite",
+              name: "HEIC Local",
+              url: "https://heic-local.vercel.app/",
+              inLanguage: "en",
+            },
+            {
+              "@type": "Organization",
+              name: "Ultimatum",
+              email: "ultaultimatum@gmail.com",
+              url: "https://heic-local.vercel.app/about",
+            },
+            {
               "@type": "WebApplication",
               name: "HEIC Local",
               url: "https://heic-local.vercel.app/",
               applicationCategory: "MultimediaApplication",
               operatingSystem: "Any",
+              isAccessibleForFree: true,
               offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
               description:
                 "Free browser-based HEIC to JPG/PNG converter. Files stay on your device. No signup, no watermark.",

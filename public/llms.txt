@@ -1,0 +1,36 @@
+# HEIC Local
+
+> Convert HEIC photos to JPG or PNG in the browser. No upload, no signup, no watermark.
+
+The public origin is https://heic-local.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
+
+## Tools
+
+* [Convert HEIC](https://heic-local.vercel.app) — Decode in this tab.
+
+## Guides
+
+* [How to convert](https://heic-local.vercel.app/how-to) — Drop, JPG or PNG, ZIP.
+* [Windows](https://heic-local.vercel.app/windows) — What Explorer will not open.
+* [WhatsApp](https://heic-local.vercel.app/whatsapp) — JPEG recode vs document.
+* [iPhone](https://heic-local.vercel.app/iphone) — HEIC is the camera default.
+* [What HEIC is](https://heic-local.vercel.app/info) — The container, not a lecture.
+* [FAQ](https://heic-local.vercel.app/faq) — Privacy.
+* [Use cases](https://heic-local.vercel.app/use-cases) — Portals that refuse HEIC.
+
+## Site pages
+
+* [About](https://heic-local.vercel.app/about) — Operator and what this tool refuses to be.
+* [Contact](https://heic-local.vercel.app/contact) — ultaultimatum@gmail.com
+* [Privacy](https://heic-local.vercel.app/privacy) — Bytes stay in the tab.
+* [Terms](https://heic-local.vercel.app/terms) — Not a studio, not a host.
+* [FAQ](https://heic-local.vercel.app/faq) — Short answers.
+
+## Site
+
+* [Sitemap](https://heic-local.vercel.app/sitemap.xml)
+* [llms.txt](https://heic-local.vercel.app/llms.txt) — This file.
+
+## Not on this origin
+
+* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.
