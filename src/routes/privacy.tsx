@@ -1,18 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import { legalHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — HEIC Local" },
-      {
-        name: "description",
-        content:
-          "HEIC Local converts HEIC photos entirely in your browser. Your files are not uploaded for conversion. Full privacy policy.",
-      },
-    ],
-  }),
+  head: () =>
+    legalHead({
+      title: "Privacy Policy — HEIC Local",
+      description:
+        "HEIC Local converts HEIC photos entirely in your browser. Your files are not uploaded for conversion. Full privacy policy.",
+      path: "/privacy",
+    }),
 });
 
 function PrivacyPage() {

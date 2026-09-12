@@ -1,17 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import { legalHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
   component: TermsPage,
-  head: () => ({
-    meta: [
-      { title: "Terms of Use — HEIC Local" },
-      {
-        name: "description",
-        content: "Terms of use for the free HEIC Local browser converter. No warranty, acceptable use, advertising notice.",
-      },
-    ],
-  }),
+  head: () =>
+    legalHead({
+      title: "Terms of Use — HEIC Local",
+      description:
+        "Terms of use for the free HEIC Local browser converter. No warranty, acceptable use, advertising notice.",
+      path: "/terms",
+    }),
 });
 
 function TermsPage() {

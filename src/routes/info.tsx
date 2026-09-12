@@ -2,19 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { InfoTool } from "@/components/info-tool";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/info")({
   component: InfoPage,
-  head: () => ({
-    meta: [
-      { title: "Is this actually HEIC? — inspect ftyp in the browser | HEIC Local" },
-      {
-        name: "description",
-        content:
-          "Check whether a file is really HEIC/HEIF: isLikelyHeic, MIME, size, and ftyp brands from the first 64 bytes. No JPG, no upload, no decode.",
-      },
-    ],
-  }),
+  head: () =>
+    articleHead({
+      title: "Is this actually HEIC? — inspect ftyp in the browser | HEIC Local",
+      description:
+        "Check whether a file is really HEIC/HEIF: isLikelyHeic, MIME, size, and ftyp brands from the first 64 bytes. No JPG, no upload, no decode.",
+      path: "/info",
+      appName: "HEIC inspect",
+    }),
 });
 
 function InfoPage() {

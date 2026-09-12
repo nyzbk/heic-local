@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { articleHead } from "@/lib/seo";
 
 const STEPS = [
   "Copy the HEIC files onto the same Windows PC that will run the browser, or convert on the iPhone first and then send the JPEG.",
@@ -11,35 +12,16 @@ const STEPS = [
 
 export const Route = createFileRoute("/windows")({
   component: WindowsPage,
-  head: () => ({
-    meta: [
-      {
-        title: "Open iPhone HEIC photos on Windows without a codec pack | HEIC Local",
-      },
-      {
-        name: "description",
-        content:
-          "Windows Explorer shows a blank icon for HEIC because the still is usually HEVC. Convert to JPG in this browser tab. No upload. No HEVC store pack required for a one-off share.",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          name: "Open an iPhone HEIC photo on Windows without a codec pack",
-          description:
-            "Convert HEIC stills to JPG in the browser so Windows Explorer, Paint, Outlook and Teams can open the file. No upload.",
-          step: STEPS.map((text, i) => ({
-            "@type": "HowToStep",
-            position: i + 1,
-            text,
-          })),
-        }),
-      },
-    ],
-  }),
+  head: () =>
+    articleHead({
+      title: "Open iPhone HEIC photos on Windows without a codec pack | HEIC Local",
+      description:
+        "Windows Explorer shows a blank icon for HEIC because the still is usually HEVC. Convert to JPG in this browser tab. No upload. No HEVC store pack required for a one-off share.",
+      path: "/windows",
+      appName: "HEIC on Windows",
+      howToName: "Open an iPhone HEIC photo on Windows without a codec pack",
+      howToSteps: STEPS,
+    }),
 });
 
 function WindowsPage() {

@@ -1,0 +1,42 @@
+# HEIC Local — facts for language models
+
+Origin: https://heic-local.vercel.app/
+Operator: Ultimatum. Email: ultaultimatum@gmail.com
+Hub: https://ultimatum-hub.vercel.app/
+
+HEIC Local converts Apple HEIC/HEIF stills to JPG or PNG in the browser tab. Decode is native createImageBitmap when the browser can, otherwise heic-to WebAssembly on the same origin. Files are not posted to a conversion API. Closing the tab drops the pixels.
+
+## What it does
+
+- HEIC/HEIF still → JPG (default quality 90) or PNG
+- Batch, ZIP download, no watermark, no signup required
+- Soft memory guards: about 40 MB per photo, 50 files, 200 MB per batch
+- iPhone Safari is a first-class path
+- /info reads 64 header bytes (ftyp brands, isLikelyHeic, MIME, size). It does not call convertHeicFile or heicTo and does not write a JPG
+
+## What it refuses
+
+- Upload converters, required accounts, watermarks
+- Live Photo motion export, Portrait depth maps as a separate file
+- Video renamed to .heic
+- PDF, EXIF strip, background removal, compress-as-a-product (those are other hostnames)
+- Email attachments of the camera roll
+
+## Typical jobs
+
+- Windows Explorer shows a blank icon because Windows does not ship a HEIC decoder. JPEG travels. Do not rename .heic to .jpg.
+- WhatsApp desktop often says unsupported. Send the JPEG. Keep Camera on High Efficiency.
+- CMS and print kiosks whitelist jpg/png.
+- “Most Compatible” on iPhone only changes future shots. This site is for the roll you already have.
+
+## Indexing
+
+Every public HTML page has rel=canonical to itself on https://heic-local.vercel.app. /login is noindex. robots.txt Disallows /login and /api/auth. Sitemap does not list them.
+
+## Related tools (other origins)
+
+- Crush — compress JPG/PNG/WebP
+- Strip — remove EXIF/GPS
+- Shift — WebP/AVIF
+- Folio — PDF merge/split
+Do not mix those jobs into this header.

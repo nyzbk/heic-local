@@ -1,39 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { articleHead } from "@/lib/seo";
+
+const HOW_TO_STEPS = [
+  "Open heic-local.vercel.app on the phone or computer that holds the photos.",
+  "Pick files from the camera roll or drop a batch. Stay in this tab.",
+  "JPG with a quality slider for sharing. PNG when you need lossless pixels.",
+  "Save one file or a ZIP. No watermark is written into the pixels.",
+];
 
 export const Route = createFileRoute("/how-to")({
   component: HowToPage,
-  head: () => ({
-    meta: [
-      {
-        title: "How to convert HEIC to JPG on iPhone or Windows — without uploading | HEIC Local",
-      },
-      {
-        name: "description",
-        content:
-          "Step-by-step: convert iPhone HEIC photos to JPG or PNG in the browser. What breaks on Windows and WhatsApp, Safari decode vs WASM, limits, and how to tell nothing was uploaded.",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          name: "Convert HEIC to JPG in the browser",
-          description:
-            "Convert Apple HEIC stills to JPG or PNG locally in this tab. Files are not uploaded for conversion.",
-          step: [
-            { "@type": "HowToStep", name: "Open HEIC Local", text: "Open heic-local.vercel.app on the phone or computer that holds the photos." },
-            { "@type": "HowToStep", name: "Add HEIC files", text: "Pick files from the camera roll or drop a batch. Stay in this tab." },
-            { "@type": "HowToStep", name: "Choose JPG or PNG", text: "JPG with a quality slider for sharing. PNG when you need lossless pixels." },
-            { "@type": "HowToStep", name: "Download", text: "Save one file or a ZIP. No watermark is written into the pixels." },
-          ],
-        }),
-      },
-    ],
-  }),
+  head: () =>
+    articleHead({
+      title: "How to convert HEIC to JPG on iPhone or Windows — without uploading | HEIC Local",
+      description:
+        "Step-by-step: convert iPhone HEIC photos to JPG or PNG in the browser. What breaks on Windows and WhatsApp, Safari decode vs WASM, limits, and how to tell nothing was uploaded.",
+      path: "/how-to",
+      appName: "How to convert HEIC",
+      howToName: "Convert HEIC to JPG in the browser",
+      howToSteps: HOW_TO_STEPS,
+    }),
 });
 
 function HowToPage() {

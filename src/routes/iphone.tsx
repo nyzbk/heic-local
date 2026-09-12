@@ -1,19 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/iphone")({
   component: IphonePage,
-  head: () => ({
-    meta: [
-      { title: "Convert HEIC to JPG on iPhone Safari — HEIC Local" },
-      {
-        name: "description",
-        content:
-          "Convert a HEIC still to JPG in Safari on the same iPhone that shot it. Native decode, WASM fallback, share sheet. No upload.",
-      },
-    ],
-  }),
+  head: () =>
+    articleHead({
+      title: "Convert HEIC to JPG on iPhone Safari — HEIC Local",
+      description:
+        "Convert a HEIC still to JPG in Safari on the same iPhone that shot it. Native decode, WASM fallback, share sheet. No upload.",
+      path: "/iphone",
+      appName: "HEIC on iPhone",
+    }),
 });
 
 function IphonePage() {

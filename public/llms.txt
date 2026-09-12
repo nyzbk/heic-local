@@ -4,33 +4,35 @@
 
 The public origin is https://heic-local.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
 
+Canonical for every indexable page is the same URL on this origin. `/login` and `/api/auth` are noindex / Disallow.
+
 ## Tools
 
-* [Convert HEIC](https://heic-local.vercel.app) — Decode in this tab.
+* [Convert HEIC](https://heic-local.vercel.app/) — Decode in this tab. JPG or PNG, batch ZIP.
+* [Inspect ftyp](https://heic-local.vercel.app/info) — 64-byte header table. No JPG.
 
 ## Guides
 
 * [How to convert](https://heic-local.vercel.app/how-to) — Drop, JPG or PNG, ZIP.
-* [Windows](https://heic-local.vercel.app/windows) — What Explorer will not open.
-* [WhatsApp](https://heic-local.vercel.app/whatsapp) — JPEG recode vs document.
-* [iPhone](https://heic-local.vercel.app/iphone) — HEIC is the camera default.
-* [What HEIC is](https://heic-local.vercel.app/info) — The container, not a lecture.
-* [FAQ](https://heic-local.vercel.app/faq) — Privacy.
+* [Windows](https://heic-local.vercel.app/windows) — Explorer blank icon without a codec pack.
+* [WhatsApp](https://heic-local.vercel.app/whatsapp) — Desktop “unsupported”.
+* [iPhone](https://heic-local.vercel.app/iphone) — Safari, share sheet, in-app browsers.
+* [FAQ](https://heic-local.vercel.app/faq) — Privacy and limits.
 * [Use cases](https://heic-local.vercel.app/use-cases) — Portals that refuse HEIC.
 
 ## Site pages
 
-* [About](https://heic-local.vercel.app/about) — Operator and what this tool refuses to be.
-* [Contact](https://heic-local.vercel.app/contact) — ultaultimatum@gmail.com
-* [Privacy](https://heic-local.vercel.app/privacy) — Bytes stay in the tab.
-* [Terms](https://heic-local.vercel.app/terms) — Not a studio, not a host.
-* [FAQ](https://heic-local.vercel.app/faq) — Short answers.
+* [About](https://heic-local.vercel.app/about)
+* [Contact](https://heic-local.vercel.app/contact) — ultaultimatum@gmail.com. Do not attach photos.
+* [Privacy](https://heic-local.vercel.app/privacy)
+* [Terms](https://heic-local.vercel.app/terms)
 
 ## Site
 
 * [Sitemap](https://heic-local.vercel.app/sitemap.xml)
 * [llms.txt](https://heic-local.vercel.app/llms.txt) — This file.
+* [llms-full.txt](https://heic-local.vercel.app/llms-full.txt) — Longer facts.
 
 ## Not on this origin
 
-* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.
+* Bytes stay in the tab. There is no conversion API, no Live Photo unpack, and no `/blogs/` cluster.

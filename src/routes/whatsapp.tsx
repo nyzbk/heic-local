@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { articleHead } from "@/lib/seo";
 
 const STEPS = [
   "Keep iPhone Camera on High Efficiency. You do not need to waste space on every future shot for one chat.",
@@ -11,35 +12,16 @@ const STEPS = [
 
 export const Route = createFileRoute("/whatsapp")({
   component: WhatsAppPage,
-  head: () => ({
-    meta: [
-      {
-        title: "Fix unsupported iPhone HEIC photos in WhatsApp desktop | HEIC Local",
-      },
-      {
-        name: "description",
-        content:
-          "Desktop WhatsApp often rejects iPhone HEIC attachments. Convert the still to JPG in this tab and send the JPEG. No upload. Camera can stay on High Efficiency.",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          name: "Send an iPhone HEIC photo through WhatsApp desktop",
-          description:
-            "Convert HEIC to JPG in the browser so WhatsApp desktop can open the attachment. No upload. Camera stays on High Efficiency.",
-          step: STEPS.map((text, i) => ({
-            "@type": "HowToStep",
-            position: i + 1,
-            text,
-          })),
-        }),
-      },
-    ],
-  }),
+  head: () =>
+    articleHead({
+      title: "Fix unsupported iPhone HEIC photos in WhatsApp desktop | HEIC Local",
+      description:
+        "Desktop WhatsApp often rejects iPhone HEIC attachments. Convert the still to JPG in this tab and send the JPEG. No upload. Camera can stay on High Efficiency.",
+      path: "/whatsapp",
+      appName: "HEIC in WhatsApp",
+      howToName: "Send an iPhone HEIC photo through WhatsApp desktop",
+      howToSteps: STEPS,
+    }),
 });
 
 function WhatsAppPage() {

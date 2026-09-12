@@ -2,19 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SoftAgencyCta } from "@/components/soft-agency-cta";
+import { legalHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
-  head: () => ({
-    meta: [
-      { title: "About HEIC Local — local-first iPhone photo converter" },
-      {
-        name: "description",
-        content:
-          "HEIC Local converts iPhone HEIC stills to JPG or PNG in the browser. No upload for conversion, no watermark, optional account.",
-      },
-    ],
-  }),
+  head: () =>
+    legalHead({
+      title: "About HEIC Local — local-first iPhone photo converter",
+      description:
+        "HEIC Local converts iPhone HEIC stills to JPG or PNG in the browser. No upload for conversion, no watermark, optional account.",
+      path: "/about",
+    }),
 });
 
 function AboutPage() {

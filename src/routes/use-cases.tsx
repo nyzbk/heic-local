@@ -1,19 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/use-cases")({
   component: UseCasesPage,
-  head: () => ({
-    meta: [
-      { title: "When to convert HEIC locally — WhatsApp, Windows, print, CMS" },
-      {
-        name: "description",
-        content:
-          "Real jobs for HEIC Local: desktop WhatsApp, Windows without HEVC, print labs, CMS uploaders, and sending a still without changing iPhone camera defaults.",
-      },
-    ],
-  }),
+  head: () =>
+    articleHead({
+      title: "When to convert HEIC locally — WhatsApp, Windows, print, CMS",
+      description:
+        "Real jobs for HEIC Local: desktop WhatsApp, Windows without HEVC, print labs, CMS uploaders, and sending a still without changing iPhone camera defaults.",
+      path: "/use-cases",
+      appName: "HEIC use cases",
+    }),
 });
 
 function UseCasesPage() {

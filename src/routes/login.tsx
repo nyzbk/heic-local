@@ -4,7 +4,10 @@ import { GROK_PROVIDERS, authEnabled, signIn } from "@/lib/auth/client";
 export const Route = createFileRoute("/login")({
   component: Login,
   head: () => ({
-    meta: [{ name: "robots", content: "noindex, nofollow" }],
+    meta: [
+      { title: "Sign in — HEIC Local" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
   }),
 });
 

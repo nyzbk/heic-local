@@ -4,76 +4,31 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { AdUnit } from "@/components/ad-unit";
 import { HomeContent } from "@/components/home-content";
+import { FAQ_ITEMS } from "@/content/faq";
+import { toolHead } from "@/lib/seo";
+
+const HOME_TITLE = "Free HEIC to JPG Converter — No Upload, No Signup, No Watermark | HEIC Local";
+const HOME_DESC =
+  "Convert iPhone HEIC photos to JPG or PNG in this browser tab. No upload, no signup, no watermark. Works on iPhone Safari and Windows. Batch + ZIP.";
+const HOME_STEPS = [
+  "Open HEIC Local on the phone or computer that holds the photos.",
+  "Drop HEIC stills. Nothing is uploaded to a conversion server.",
+  "Pick JPG or PNG. Default JPEG quality is 90.",
+  "Download one file or a ZIP. Closing the tab discards the pixels.",
+];
 
 export const Route = createFileRoute("/")({
   component: Home,
-  head: () => ({
-    meta: [
-      {
-        title: "Free HEIC to JPG Converter — No Upload, No Signup, No Watermark | HEIC Local",
-      },
-      {
-        name: "description",
-        content:
-          "Convert iPhone HEIC photos to JPG or PNG in this browser tab. No upload, no signup, no watermark. Works on iPhone Safari and Windows. Batch + ZIP.",
-      },
-      {
-        name: "keywords",
-        content:
-          "heic to jpg, convert heic to jpg, heic converter free, heic to png, iphone heic converter, private heic converter, heic windows, heic whatsapp",
-      },
-      { property: "og:title", content: "Free HEIC to JPG Converter — No Upload | HEIC Local" },
-      {
-        property: "og:description",
-        content: "Convert HEIC photos to JPG/PNG in the browser. Files never leave your device.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: "https://heic-local.vercel.app/og.jpg" },
-      { name: "twitter:image", content: "https://heic-local.vercel.app/og.jpg" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "WebSite",
-              name: "HEIC Local",
-              url: "https://heic-local.vercel.app/",
-              inLanguage: "en",
-            },
-            {
-              "@type": "Organization",
-              name: "Ultimatum",
-              email: "ultaultimatum@gmail.com",
-              url: "https://heic-local.vercel.app/about",
-            },
-            {
-              "@type": "WebApplication",
-              name: "HEIC Local",
-              url: "https://heic-local.vercel.app/",
-              applicationCategory: "MultimediaApplication",
-              operatingSystem: "Any",
-              isAccessibleForFree: true,
-              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-              description:
-                "Free browser-based HEIC to JPG/PNG converter. Files stay on your device. No signup, no watermark.",
-              featureList: [
-                "Client-side conversion",
-                "No upload",
-                "Batch convert",
-                "ZIP download",
-                "JPG and PNG output",
-                "Works on iPhone Safari",
-              ],
-            },
-          ],
-        }),
-      },
-    ],
-  }),
+  head: () =>
+    toolHead({
+      title: HOME_TITLE,
+      description: HOME_DESC,
+      path: "/",
+      appName: "HEIC Local",
+      faqs: FAQ_ITEMS.slice(0, 4),
+      howToName: "How to convert HEIC to JPG in the browser",
+      howToSteps: HOME_STEPS,
+    }),
 });
 
 const STEPS = [

@@ -22,8 +22,7 @@ export const Route = createRootRoute({
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://heic-local.vercel.app/og.jpg" },
-      { name: "robots", content: "index, follow" },
-      { name: "google-adsense-account", content: "ca-pub-7636435144500691" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },      { name: "google-adsense-account", content: "ca-pub-7636435144500691" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

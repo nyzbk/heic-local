@@ -1,21 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { legalHead } from "@/lib/seo";
 
 const EMAIL = "ultaultimatum@gmail.com";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact HEIC Local — in-browser HEIC converter" },
-      {
-        name: "description",
-        content:
-          "Email the operator of HEIC Local about decode bugs. Do not attach photos. Conversion stays in your browser tab.",
-      },
-    ],
-  }),
+  head: () =>
+    legalHead({
+      title: "Contact HEIC Local — in-browser HEIC converter",
+      description:
+        "Email the operator of HEIC Local about decode bugs. Do not attach photos. Conversion stays in your browser tab.",
+      path: "/contact",
+    }),
 });
 
 function ContactPage() {
