@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTENT_LASTMOD, SITE_ORIGIN } from "@/lib/site";
 
+/** HTML indexables only. llms.txt stays on disk for AEO; do not list it here. */
 const PATHS = [
   "/",
   "/how-to",
@@ -14,8 +15,6 @@ const PATHS = [
   "/about",
   "/privacy",
   "/terms",
-  "/llms.txt",
-  "/llms-full.txt",
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({

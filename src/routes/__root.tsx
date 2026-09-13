@@ -12,17 +12,11 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Convert HEIC photos to JPG or PNG free in your browser. Private (no upload), unlimited, works on iPhone. No watermark, no daily limit.",
+          "Convert iPhone HEIC photos to JPG or PNG in this browser tab. No upload, no signup, no watermark. Works on iPhone Safari and Windows. Batch + ZIP.",
       },
       { name: "theme-color", content: "#f3eee4" },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: 'HEIC Local' },
-      { property: "og:image", content: "https://heic-local.vercel.app/og.jpg" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://heic-local.vercel.app/og.jpg" },
-      { name: "robots", content: "index, follow, max-image-preview:large" },      { name: "google-adsense-account", content: "ca-pub-7636435144500691" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "google-adsense-account", content: "ca-pub-7636435144500691" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

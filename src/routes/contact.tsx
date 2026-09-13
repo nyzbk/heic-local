@@ -13,6 +13,7 @@ export const Route = createFileRoute("/contact")({
       description:
         "Email the operator of HEIC Local about decode bugs. Do not attach photos. Conversion stays in your browser tab.",
       path: "/contact",
+      pageType: "ContactPage",
     }),
 });
 

@@ -12,6 +12,7 @@ export const Route = createFileRoute("/about")({
       description:
         "HEIC Local converts iPhone HEIC stills to JPG or PNG in the browser. No upload for conversion, no watermark, optional account.",
       path: "/about",
+      pageType: "AboutPage",
     }),
 });
 

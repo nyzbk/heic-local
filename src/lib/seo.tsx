@@ -1,6 +1,7 @@
 import { CONTACT_EMAIL, HUB_URL, SITE_NAME, SITE_ORIGIN, absUrl } from "@/lib/site";
 
 export type FaqItem = { q: string; a: string };
+export type LegalPageType = "AboutPage" | "ContactPage" | "WebPage";
 
 const OG_IMAGE = absUrl("/og.jpg");
 
@@ -19,7 +20,7 @@ function socialMeta(title: string, description: string, url: string) {
     { property: "og:image", content: OG_IMAGE },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
-    { property: "og:image:alt", content: SITE_NAME },
+    { property: "og:image:alt", content: title },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -43,6 +44,7 @@ type JsonLdOpts = {
   howToName?: string;
   howToSteps?: string[];
   includeApp?: boolean;
+  pageType?: LegalPageType;
 };
 
 export function jsonLdScripts(opts: JsonLdOpts) {
@@ -109,6 +111,20 @@ export function jsonLdScripts(opts: JsonLdOpts) {
       }),
     });
   }
+  if (opts.pageType) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": opts.pageType,
+        name: opts.appName,
+        url,
+        description: opts.description,
+        isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
+        publisher,
+      }),
+    });
+  }
   if (opts.faqs?.length) {
     scripts.push({
       type: "application/ld+json",
@@ -153,6 +169,7 @@ function withCanonical(
     howToName?: string;
     howToSteps?: string[];
     includeApp?: boolean;
+    pageType?: LegalPageType;
   },
 ) {
   const url = absUrl(path);
@@ -174,6 +191,7 @@ function withCanonical(
           howToName: extra.howToName,
           howToSteps: extra.howToSteps,
           includeApp: extra.includeApp,
+          pageType: extra.pageType,
         })
       : [],
   };
@@ -216,8 +234,17 @@ export function articleHead(opts: {
   });
 }
 
-export function legalHead(opts: { title: string; description: string; path: string }) {
-  return withCanonical(opts.title, opts.description, opts.path);
+export function legalHead(opts: {
+  title: string;
+  description: string;
+  path: string;
+  pageType?: LegalPageType;
+}) {
+  return withCanonical(opts.title, opts.description, opts.path, {
+    appName: opts.title,
+    includeApp: false,
+    pageType: opts.pageType ?? "WebPage",
+  });
 }
 
 /** Per-page canonical + OG. Path is required so `/` is never left without rel=canonical. */
